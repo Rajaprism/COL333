@@ -1,51 +1,39 @@
-# AI Assignments Repository
+# AI Search & Reasoning Labs
 
-Welcome to the AI Assignments repository! This collection of assignments covers a variety of AI topics, including greedy algorithms, game AI, SAT solvers, and Bayesian networks. Each assignment is designed to provide hands-on experience with key AI concepts and techniques.
+Five assignments from an undergraduate Artificial Intelligence course
+(IIT Delhi, COL333), each implementing a different classical AI technique
+end-to-end in C++.
 
-## Table of Contents
+| Lab | Topic | Techniques |
+|---|---|---|
+| [lab-01-greedy-hill-climbing](lab-01-greedy-hill-climbing) | Zone layout optimization | Greedy hill climbing, random restarts, local search |
+| [lab-02-rollerball-minimax-bot](lab-02-rollerball-minimax-bot) | Game-playing AI (v1) | Minimax, alpha-beta pruning, position evaluation |
+| [lab-03-sat-clique-search](lab-03-sat-clique-search) | Combinatorial search via SAT | CNF encoding, sequential-counter at-most-k constraints |
+| [lab-04-bayesian-network-learning](lab-04-bayesian-network-learning) | Probabilistic reasoning | Bayesian network parameter learning from data |
+| [lab-05-rollerball-bot-v2](lab-05-rollerball-bot-v2) | Game-playing AI (v2) | Minimax search against a provided game engine interface |
 
-1. [Greedy Hill Climbing](#1-greedy-hill-climbing)
-2. [Rollerball AI Bot (Assignment 1)](#2-rollerball-ai-bot-assignment-1)
-3. [SAT Solver](#3-sat-solver)
-4. [Learning Bayesian Networks](#4-learning-bayesian-networks)
-5. [Rollerball AI Bot (Assignment 2)](#5-rollerball-ai-bot-assignment-2)
+Each lab folder is self-contained (own `docs/` with the assignment brief,
+own README). Labs 1, 3 and 4 were solved individually; labs 2 and 5 were
+team assignments — original team writeups/readmes are preserved under each
+lab's `docs/`.
 
-## 1. Greedy Hill Climbing
+## Structure
 
-**Description:**  
-This assignment focuses on the Greedy Hill Climbing algorithm, a simple yet powerful technique for solving optimization problems. You'll implement the algorithm and apply it to a specific problem, analyzing its strengths and weaknesses, and exploring how it can be enhanced to avoid local maxima.
+```
+lab-XX-name/
+├── README.md      # what it does, how to run it
+├── *.cpp / *.hpp  # the submitted implementation
+├── archive/       # alternate/earlier engine attempts, kept for reference
+├── docs/          # assignment brief + original team writeup
+└── testdata/      # sample inputs used to test/run the solution
+```
 
-**Files:**
-- `2021CS10915XX`
+## Repository history
 
-## 2. Rollerball AI Bot (Assignment 1)
-
-**Description:**  
-In this assignment, you will develop an AI bot for the Rollerball game. The bot will use basic AI techniques to navigate the game environment, make decisions, and aim to maximize its score. This is the first of two assignments focused on game AI, with a particular emphasis on state-based decision-making.
-
-**Files:**
-- `2021CS10915XX`
-
-## 3. SAT Solver
-
-**Description:**  
-This assignment involves implementing a SAT solver, a fundamental tool in AI for solving Boolean satisfiability problems. You'll learn how to encode problems into CNF (Conjunctive Normal Form) and apply techniques such as DPLL (Davis-Putnam-Logemann-Loveland) to solve them.
-
-**Files:**
-- `2021CS10915XX`
-
-## 4. Learning Bayesian Networks
-
-**Description:**  
-This assignment covers the theory and practice of learning Bayesian networks, a powerful tool for representing and reasoning under uncertainty. You'll work on learning the structure of Bayesian networks from data and learning missing parameters, gaining insight into probabilistic graphical models.
-
-**Files:**
-- `2021CS10915XX`
-
-## 5. Rollerball AI Bot (Assignment 2)
-
-**Description:**  
-This is a continuation of the Rollerball AI Bot assignment, where you'll enhance your previous implementation with more advanced AI techniques. The focus will be on improving the bot's performance through optimization and the incorporation of machine learning methods.
-
-**Files:**
-- `2021CS10915XX`
+This repo was originally a flat dump of `A1`–`A5` folders with nested
+duplicate copies, checked-in `.zip` archives and compiled binaries, and a
+full vendored copy of the [asio](https://think-async.com/Asio/) and
+[websocketpp](https://github.com/zaphoyd/websocketpp) C++ libraries used by
+the two game-bot assignments (labs 2 and 5). It's been reorganized into the
+structure above; vendored third-party libraries were removed rather than
+committed — see each lab's README for what to fetch before building.
